@@ -53,13 +53,13 @@
                             <span class="text-secondary font_min px-2">Cerca o inizia una nuova chat</span>
                         </div>
                     </div>
-                    <div class="sidebar_menu">
-                        <div class="avatar d-flex align-items-center">
+                    <div class="sidebar_contacts">
+                        <div v-for="(contact, i) in contacts" class="contacts d-flex align-items-center">
                             <div class="avatar_face">
-                                <img class="rounded-circle px-1 py-1" width="50" src="./assets/img/avatar_1.jpg" alt="">
+                                <img class="rounded-circle px-1 py-1" width="50" :src="contact.avatar" alt="">
                             </div>
                             <div class="avatar_access">
-                                <div class="avatar_name font_name">Michele</div>
+                                <div class="avatar_name font_name">{{contact.name}}</div>
                                 <div class="last_access text-secondary font_min">Ultimo messaggio inviato</div>
                             </div>
                             <div class="time_access">
@@ -96,9 +96,9 @@
                         </div>
                     </div>
                     <div class="chat_input d-flex justify-content-between align-items-center">
-                        <i class="fa-regular fa-face-smile px-4"></i>
+                        <a class="text-muted" href="#"><i class="fa-regular fa-face-smile px-4"></i></a>
                         <input class="input_message my-2 border-0" type="text" placeholder="Scrivi un messaggio">
-                        <i class="fa-solid fa-microphone px-4"></i>
+                        <a class="text-muted" href="#"><i class="fa-solid fa-microphone px-4"></i></a>
                     </div>
                 </div>
 

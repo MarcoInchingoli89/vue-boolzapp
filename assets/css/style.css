@@ -11,6 +11,8 @@
     --notifications--: #8EDAFC;
     --wallpaper_low--: #D9DBD4;
     --primary--: #EAEAEA;
+    --chat_sent: #D5F9BA;
+
 
 }
 
@@ -50,17 +52,17 @@ body {
     height: 25px;
 }
 
-.sidebar_menu {
+.sidebar_contacts {
     background-color: white;
     height: 100%;
     overflow-y: scroll;
 }
 
-.sidebar_menu .time_access {
+.sidebar_contacts .time_access {
     position: relative;
 }
 
-.sidebar_menu .time {
+.sidebar_contacts .time {
     position: absolute;
     bottom: 5px;
     left: 110px;
@@ -69,7 +71,6 @@ body {
 .chat {
     height: 100%;
     width: 100%;
-    background-color: brown;
 }
 
 .chat_header {
@@ -92,13 +93,13 @@ body {
 }
 
 .chat_main .sent {
-    background-color: green;
-    width: 250px;
+    background-color: var(--chat_sent);
+    width: 350px;
 }
 
 .chat_main .received {
     background-color: white;
-    width: 250px;
+    width: 350px;
 }
 
 .chat_input {
