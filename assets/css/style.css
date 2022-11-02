@@ -4,19 +4,62 @@
     box-sizing: border-box;
 }
 
-
-header {
-    height: 150px;
-    width: 100%;
-    background-color: lightseagreen;
+body {
+    background-color: lightgrey;
 }
 
-main {
-    height: 100%;
-    background-color: beige;
+.wallpaper {
+    height: 100vh;
 }
 
 .wrapper {
-    height: 500px;
-    background-color: aqua;
+    height: 680px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 500px;
+}
+
+.sidebar_header {
+    background-color: beige;
+    height: 70px;
+}
+
+.sidebar_notifications {
+    background-color: blueviolet;
+    height: 70px;
+}
+
+.sidebar_search {
+    background-color: blue;
+    height: 50px;
+}
+
+.sidebar_menu {
+    background-color: black;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.chat {
+    height: 100%;
+    width: 100%;
+    background-color: brown;
+}
+
+.chat_header {
+    background-color: beige;
+    height: 65px;
+}
+
+.chat_main {
+    background-color: chartreuse;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.chat_input {
+    background-color: darkmagenta;
+    height: 70px;
 }
