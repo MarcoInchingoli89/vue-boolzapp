@@ -36,7 +36,8 @@
                         </div>
                     </div>
                     <div class="sidebar_notifications d-flex gap-3 p-2">
-                        <div class="bell_icon rounded-circle bg-white d-flex justify-content-center align-items-center p-2">
+                        <div
+                            class="bell_icon rounded-circle bg-white d-flex justify-content-center align-items-center p-2">
                             <i class="fa-solid fa-bell-slash text-info"></i>
                         </div>
                         <div class="notifications_stats d-flex flex-column justify-content-center">
@@ -85,7 +86,15 @@
                             <a href="#"><i class="fa-solid fa-ellipsis-vertical text-muted"></i></i></a>
                         </div>
                     </div>
-                    <div class="chat_main"></div>
+                    <div class="chat_main">
+                        <div class="message_sent d-flex flex-column">
+                            <div class="sent rounded-3 px-2 py-3 mt-4 my-2 me-3 align-self-end">Hai portato a spasso il cane?</div>
+                            <div class="sent rounded-3 px-2 py-3 align-self-end me-3">Ricordati di stendere i panni</div>
+                        </div>
+                        <div class="message_received d-flex flex-column">
+                            <div class="received rounded-3 px-2 py-3 align-self-start mt-4 ms-3">Tutto fatto!</div>
+                        </div>
+                    </div>
                     <div class="chat_input d-flex justify-content-between align-items-center">
                         <i class="fa-regular fa-face-smile px-4"></i>
                         <input class="input_message my-2 border-0" type="text" placeholder="Scrivi un messaggio">

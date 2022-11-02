@@ -91,6 +91,16 @@ body {
     overflow-y: scroll;
 }
 
+.chat_main .sent {
+    background-color: green;
+    width: 250px;
+}
+
+.chat_main .received {
+    background-color: white;
+    width: 250px;
+}
+
 .chat_input {
     background-color: var(--primary--);
     height: 70px;
