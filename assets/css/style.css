@@ -4,8 +4,18 @@
     box-sizing: border-box;
 }
 
+/* Color Palette */
+
+:root {
+    --wallpaper_high--: #009688;
+    --notifications--: #8EDAFC;
+    --wallpaper_low--: #D9DBD4;
+    --primary--: #EAEAEA;
+
+}
+
 body {
-    background-color: lightgrey;
+    background-color: var(--wallpaper_low--);
 }
 
 .wallpaper {
@@ -22,22 +32,22 @@ body {
 }
 
 .sidebar_header {
-    background-color: beige;
+    background-color: var(--primary--);
     height: 70px;
 }
 
 .sidebar_notifications {
-    background-color: blueviolet;
+    background-color: var(--notifications--);
     height: 70px;
 }
 
 .sidebar_search {
-    background-color: blue;
+    background-color: var(--primary--);
     height: 50px;
 }
 
 .sidebar_menu {
-    background-color: black;
+    background-color: white;
     height: 100%;
     overflow-y: scroll;
 }
@@ -49,17 +59,17 @@ body {
 }
 
 .chat_header {
-    background-color: beige;
+    background-color: var(--primary--);
     height: 65px;
 }
 
 .chat_main {
-    background-color: chartreuse;
+    background-image: url('/assets/img/mine.jpg');
     height: 100%;
     overflow-y: scroll;
 }
 
 .chat_input {
-    background-color: darkmagenta;
+    background-color: var(--primary--);
     height: 70px;
 }
