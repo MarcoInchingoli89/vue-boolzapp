@@ -85,3 +85,8 @@ body {
     background-color: var(--primary--);
     height: 70px;
 }
+
+.chat_input .input_message {
+    height: 40px;
+    width: 90%;
+}
