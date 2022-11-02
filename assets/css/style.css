@@ -46,6 +46,10 @@ body {
     height: 50px;
 }
 
+.sidebar_search .search {
+    height: 25px;
+}
+
 .sidebar_menu {
     background-color: white;
     height: 100%;
@@ -61,6 +65,14 @@ body {
 .chat_header {
     background-color: var(--primary--);
     height: 65px;
+}
+
+.font_min {
+    font-size: 0.8rem;
+}
+
+.chat_header .font_name {
+    font-size: 0.9rem;
 }
 
 .chat_main {
