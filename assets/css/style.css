@@ -56,6 +56,16 @@ body {
     overflow-y: scroll;
 }
 
+.sidebar_menu .time_access {
+    position: relative;
+}
+
+.sidebar_menu .time {
+    position: absolute;
+    bottom: 5px;
+    left: 110px;
+}
+
 .chat {
     height: 100%;
     width: 100%;
