@@ -56,6 +56,10 @@ body {
     overflow-y: scroll;
 }
 
+.contact.active {
+    background-color: lightgrey;
+}
+
 .sidebar_contacts .time_access {
     position: relative;
 }
