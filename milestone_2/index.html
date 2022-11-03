@@ -54,7 +54,7 @@
                         </div>
                     </div>
                     <div class="sidebar_contacts">
-                        <div v-for="(contact, index) in contacts" class="contact d-flex align-items-center" :class="index === activeContact ? 'active' : '' ">
+                        <div v-for="(contact, index) in contacts" class="contact d-flex align-items-center" :class="index === activeContact ? 'active' : '' " @click="changeContact(index)">
                             <div class="avatar_face">
                                 <img class="rounded-circle px-1 py-1" width="50" :src="contact.avatar" alt="">
                             </div>
@@ -88,11 +88,11 @@
                     </div>
                     <div class="chat_main">
                         <div class="message_sent d-flex flex-column">
-                            <div class="sent rounded-3 px-2 py-3 mt-4 my-2 me-3 align-self-end">{{contacts[activeContact].messages[1].message}}</div>
-                            <div class="sent rounded-3 px-2 py-3 align-self-end me-3">Ricordati di stendere i panni</div>
+                            <div class="sent rounded-3 px-2 py-3 mt-4 my-2 me-3 align-self-end">{{contacts[activeContact].messages[0].message}}</div>
+                            <div class="sent rounded-3 px-2 py-3 align-self-end me-3">{{contacts[activeContact].messages[1].message}}</div>
                         </div>
                         <div class="message_received d-flex flex-column">
-                            <div class="received rounded-3 px-2 py-3 align-self-start mt-4 ms-3">Tutto fatto!</div>
+                            <div class="received rounded-3 px-2 py-3 align-self-start mt-4 ms-3">{{contacts[activeContact].messages[2].message}}</div>
                         </div>
                     </div>
                     <div class="chat_input d-flex justify-content-between align-items-center">
