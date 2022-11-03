@@ -72,12 +72,12 @@
 
                 <div class="chat d-flex flex-column">
                     <div class="chat_header d-flex justify-content-between">
-                        <div class="avatar d-flex align-items-center">
+                        <div class="active_user d-flex align-items-center">
                             <div class="avatar_face">
-                                <img class="rounded-circle px-1 py-1" width="50" src="./assets/img/avatar_1.jpg" alt="">
+                                <img class="rounded-circle px-1 py-1" width="50" :src="contacts[activeContact].avatar" alt="">
                             </div>
                             <div class="avatar_access">
-                                <div class="avatar_name font_name">Michele</div>
+                                <div class="avatar_name font_name">{{contacts[activeContact].name}}</div>
                                 <div class="last_access text-secondary font_min">Ultimo accesso oggi alle 12:00</div>
                             </div>
                         </div>
