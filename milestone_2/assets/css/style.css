@@ -12,12 +12,10 @@
     --wallpaper_low--: #D9DBD4;
     --primary--: #EAEAEA;
     --chat_sent: #D5F9BA;
-
-
 }
 
 body {
-    background-color: var(--wallpaper_low--);
+    background-image: linear-gradient(to bottom, #009688 0, #009688 140px, #D9DBD4 140px, #D9DBD4 100%);
 }
 
 .wallpaper {
@@ -87,7 +85,7 @@ body {
 }
 
 .chat_main {
-    background-image: url('/assets/img/mine.jpg');
+    background-image: url('/milestone_2/assets/img/mine.jpg');
     height: 100%;
     overflow-y: scroll;
 }
