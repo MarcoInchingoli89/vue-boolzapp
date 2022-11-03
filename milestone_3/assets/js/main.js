@@ -1,11 +1,3 @@
-/* Milestone 1
-Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
-Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto */
-
-
-
-
-
 
 const { createApp } = Vue
 
@@ -13,6 +5,11 @@ createApp({
   data() {
     return {
       
+      newMessage: {
+        date: '',
+        message: '',
+        status: 'sent'
+      },
       activeContact: 0,
       contacts: [
         {
@@ -183,6 +180,15 @@ createApp({
   methods: {
     changeContact(index) {
       this.activeContact = index;
-    }
+    },
+
+    addMessage(activeContact, index) {
+      console.log('Ho inserito il messaggio');
+      const newMessage = {
+        ...this.newMessage
+    };
+    console.log(newMessage);
+    this.contacts[activeContact].messages[index].message.push(newMessage);
   }
+}
 }).mount('#app')

@@ -18,10 +18,6 @@ body {
     background-image: linear-gradient(to bottom, #009688 0, #009688 140px, #D9DBD4 140px, #D9DBD4 100%);
 }
 
-.wallpaper {
-    height: 100vh;
-}
-
 .wrapper {
     height: 680px;
 }
