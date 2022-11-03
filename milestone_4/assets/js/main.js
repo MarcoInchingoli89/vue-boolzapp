@@ -199,6 +199,9 @@ createApp({
       this.contacts[activeContact].messages.push(this.messageAnswer);
     }, 1000);
     this.newMessage.message = '';
-}
+},
+  filterList() {
+    
+  }
   }
 }).mount('#app')
