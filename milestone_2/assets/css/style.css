@@ -96,11 +96,14 @@ body {
 
 .chat_main .sent {
     background-color: var(--chat_sent);
+    align-self: flex-end;
     width: 350px;
 }
 
 .chat_main .received {
     background-color: white;
+    align-self: flex-start;
+    margin-left: 1rem;
     width: 350px;
 }
 
