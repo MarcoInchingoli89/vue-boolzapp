@@ -10,8 +10,11 @@ createApp({
         message: '',
         status: 'sent'
       },
-      timeAnswer: 1,
-      intervalId: null,
+      messageAnswer: {
+        date: '',
+        message: 'Ok!',
+        status: 'received'
+      },
       activeContact: 0,
       contacts: [
         {
@@ -192,8 +195,10 @@ createApp({
     console.log(newMessage);
     console.log(this.contacts[activeContact].messages);
     this.contacts[activeContact].messages.push(newMessage);
+    this.timeAnswer = setTimeout(() => {
+      this.contacts[activeContact].messages.push(this.messageAnswer);
+    }, 1000);
     this.newMessage.message = '';
-    
-  }
 }
+  }
 }).mount('#app')
