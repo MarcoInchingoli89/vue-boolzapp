@@ -87,13 +87,13 @@
                         </div>
                     </div>
                     <div class="chat_main">
-                        <div class="message_sent d-flex flex-column">
-                            <div class="sent rounded-3 px-2 py-3 mt-4 my-2 me-3 align-self-end">{{contacts[activeContact].messages[0].message}}</div>
-                            <div class="sent rounded-3 px-2 py-3 align-self-end me-3">{{contacts[activeContact].messages[1].message}}</div>
+                        <div v-for="(message, index) in contacts[activeContact].messages"  class="message_sent d-flex flex-column">
+                            <div :class="contacts[activeContact].messages[index].status === 'received' ? 'received' : 'sent' " class="rounded-3 px-2 py-3 mt-4 my-2 me-3 align-self-end">{{contacts[activeContact].messages[index].message}}</div>
+                            <!-- <div class="sent rounded-3 px-2 py-3 align-self-end me-3">{{contacts[activeContact].messages[index].message}}</div> -->
                         </div>
-                        <div class="message_received d-flex flex-column">
-                            <div class="received rounded-3 px-2 py-3 align-self-start mt-4 ms-3">{{contacts[activeContact].messages[2].message}}</div>
-                        </div>
+                        <!-- <div class="message_received d-flex flex-column">
+                            <div class="received rounded-3 px-2 py-3 align-self-start mt-4 ms-3"> --><!-- {{contacts[activeContact].messages[index].message}}</div>
+                        </div> -->
                     </div>
                     <div class="chat_input d-flex justify-content-between align-items-center">
                         <a class="text-muted" href="#"><i class="fa-regular fa-face-smile px-4"></i></a>
