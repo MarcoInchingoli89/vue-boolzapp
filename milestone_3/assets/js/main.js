@@ -10,6 +10,8 @@ createApp({
         message: '',
         status: 'sent'
       },
+      timeAnswer: 1,
+      intervalId: null,
       activeContact: 0,
       contacts: [
         {
@@ -178,17 +180,20 @@ createApp({
   },
 
   methods: {
-    changeContact(index) {
-      this.activeContact = index;
+    changeContact(i) {
+      this.activeContact = i;
     },
 
-    addMessage(activeContact, index) {
+    addMessage(activeContact) {
       console.log('Ho inserito il messaggio');
       const newMessage = {
         ...this.newMessage
     };
     console.log(newMessage);
-    this.contacts[activeContact].messages[index].message.push(newMessage);
+    console.log(this.contacts[activeContact].messages);
+    this.contacts[activeContact].messages.push(newMessage);
+    this.newMessage.message = '';
+    
   }
 }
 }).mount('#app')

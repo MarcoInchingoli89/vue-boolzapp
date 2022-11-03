@@ -54,8 +54,8 @@
                         </div>
                     </div>
                     <div class="sidebar_contacts">
-                        <div v-for="(contact, index) in contacts" class="contact d-flex align-items-center"
-                            :class="index === activeContact ? 'active' : '' " @click="changeContact(index)">
+                        <div v-for="(contact, i) in contacts" class="contact d-flex align-items-center"
+                            :class="i === activeContact ? 'active' : '' " @click="changeContact(i)">
                             <div class="avatar_face">
                                 <img class="rounded-circle px-1 py-1" width="50" :src="contact.avatar" alt="">
                             </div>
@@ -102,7 +102,7 @@
                     </div>
                     <div class="chat_input d-flex justify-content-between align-items-center">
                         <a class="text-muted" href="#"><i class="fa-regular fa-face-smile px-4"></i></a>
-                        <input v-model="newMessage.message" @keyup.enter="addMessage(activeContact, index)" class="input_message my-2 border-0" type="text" placeholder="Scrivi un messaggio">
+                        <input v-model="newMessage.message" @keyup.enter="addMessage(activeContact)" class="input_message my-2 border-0" type="text" placeholder="Scrivi un messaggio">
                         <a class="text-muted" href="#"><i class="fa-solid fa-microphone px-4"></i></a>
                     </div>
                 </div>
