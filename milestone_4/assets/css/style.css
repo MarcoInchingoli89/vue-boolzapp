@@ -22,6 +22,10 @@ body {
     height: 680px;
 }
 
+.wallpaper {
+    height: 100vh;
+}
+
 .sidebar {
     height: 100%;
     width: 500px;
@@ -42,8 +46,8 @@ body {
     height: 50px;
 }
 
-.sidebar_search .search {
-    height: 25px;
+.sidebar_search .search_input {
+    width: 300px;
 }
 
 .sidebar_contacts {
