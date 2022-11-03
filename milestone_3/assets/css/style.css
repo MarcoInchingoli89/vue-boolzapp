@@ -1,0 +1,118 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Color Palette */
+
+:root {
+    --wallpaper_high--: #009688;
+    --notifications--: #8EDAFC;
+    --wallpaper_low--: #D9DBD4;
+    --primary--: #EAEAEA;
+    --chat_sent: #D5F9BA;
+}
+
+body {
+    background-image: linear-gradient(to bottom, #009688 0, #009688 140px, #D9DBD4 140px, #D9DBD4 100%);
+}
+
+.wallpaper {
+    height: 100vh;
+}
+
+.wrapper {
+    height: 680px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 500px;
+}
+
+.sidebar_header {
+    background-color: var(--primary--);
+    height: 70px;
+}
+
+.sidebar_notifications {
+    background-color: var(--notifications--);
+    height: 70px;
+}
+
+.sidebar_search {
+    background-color: var(--primary--);
+    height: 50px;
+}
+
+.sidebar_search .search {
+    height: 25px;
+}
+
+.sidebar_contacts {
+    background-color: white;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.contact.active {
+    background-color: lightgrey;
+}
+
+.sidebar_contacts .time_access {
+    position: relative;
+}
+
+.sidebar_contacts .time {
+    position: absolute;
+    bottom: 5px;
+    left: 110px;
+}
+
+.chat {
+    height: 100%;
+    width: 100%;
+}
+
+.chat_header {
+    background-color: var(--primary--);
+    height: 65px;
+}
+
+.font_min {
+    font-size: 0.8rem;
+}
+
+.chat_header .font_name {
+    font-size: 0.9rem;
+}
+
+.chat_main {
+    background-image: url('/milestone_2/assets/img/mine.jpg');
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.chat_main .sent {
+    background-color: var(--chat_sent);
+    align-self: flex-end;
+    width: 350px;
+}
+
+.chat_main .received {
+    background-color: white;
+    align-self: flex-start;
+    margin-left: 1rem;
+    width: 350px;
+}
+
+.chat_input {
+    background-color: var(--primary--);
+    height: 70px;
+}
+
+.chat_input .input_message {
+    height: 40px;
+    width: 90%;
+}

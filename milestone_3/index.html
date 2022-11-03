@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Boolzapp</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <div class="container-fluid gx-0 d-flex justify-content-center align-items-center wallpaper">
+            <div class="wrapper container d-flex">
+
+                <div class="sidebar d-flex flex-column">
+                    <div class="sidebar_header border-end d-flex justify-content-between">
+                        <div class="avatar d-flex align-items-center">
+                            <div class="avatar_face">
+                                <img class="rounded-circle p-1" width="50" src="./assets/img/avatar_io.jpg" alt="">
+                            </div>
+                            <div class="avatar_name font_name">Sofia</div>
+                        </div>
+                        <div class="sidebar_icons d-flex align-items-center gap-2 px-3">
+                            <a href="#"><i class="fa-solid fa-circle-notch text-muted"></i></a>
+                            <a href="#"><i class="fa-solid fa-message text-muted"></i></a>
+                            <a href="#"><i class="fa-solid fa-ellipsis-vertical text-muted"></i></i></a>
+                        </div>
+                    </div>
+                    <div class="sidebar_notifications d-flex gap-3 p-2">
+                        <div
+                            class="bell_icon rounded-circle bg-white d-flex justify-content-center align-items-center p-2">
+                            <i class="fa-solid fa-bell-slash text-info"></i>
+                        </div>
+                        <div class="notifications_stats d-flex flex-column justify-content-center">
+                            <div class="notifications_receive font_min">Ricevi notifiche di nuovi messaggi</div>
+                            <div class="activate_notifications font_min">
+                                <a class="text-secondary" href="#">Attiva notifiche desktop</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar_search">
+                        <div class="search bg-white my-2 mx-2">
+                            <i class="fa-solid fa-magnifying-glass text-muted px-2"></i>
+                            <span class="text-secondary font_min px-2">Cerca o inizia una nuova chat</span>
+                        </div>
+                    </div>
+                    <div class="sidebar_contacts">
+                        <div v-for="(contact, index) in contacts" class="contact d-flex align-items-center"
+                            :class="index === activeContact ? 'active' : '' " @click="changeContact(index)">
+                            <div class="avatar_face">
+                                <img class="rounded-circle px-1 py-1" width="50" :src="contact.avatar" alt="">
+                            </div>
+                            <div class="avatar_access">
+                                <div class="avatar_name font_name">{{contact.name}}</div>
+                                <div class="last_access text-secondary font_min">Ultimo messaggio inviato</div>
+                            </div>
+                            <div class="time_access">
+                                <span class="time font_min">12:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat d-flex flex-column">
+                    <div class="chat_header d-flex justify-content-between">
+                        <div class="active_user d-flex align-items-center">
+                            <div class="avatar_face">
+                                <img class="rounded-circle px-1 py-1" width="50" :src="contacts[activeContact].avatar" alt="">
+                            </div>
+                            <div class="avatar_access">
+                                <div class="avatar_name font_name">{{contacts[activeContact].name}}</div>
+                                <div class="last_access text-secondary font_min">Ultimo accesso oggi alle 12:00</div>
+                            </div>
+                        </div>
+                        <div class="sidebar_icons d-flex align-items-center gap-2 px-3">
+                            <a href="#"><i class="fa-solid fa-magnifying-glass text-muted"></i></a>
+                            <a href="#"><i class="fa-solid fa-paperclip text-muted"></i></a>
+                            <a href="#"><i class="fa-solid fa-ellipsis-vertical text-muted"></i></i></a>
+                        </div>
+                    </div>
+                    <div class="chat_main">
+                        <div v-for="(message, index) in contacts[activeContact].messages"
+                            class="message_sent d-flex flex-column">
+                            <div :class="contacts[activeContact].messages[index].status === 'received' ? 'received' : 'sent' "
+                                class="rounded-3 px-2 py-3 mt-4 my-2 me-3">
+                                {{contacts[activeContact].messages[index].message}}</div>
+                            <!-- <div class="sent rounded-3 px-2 py-3 align-self-end me-3">{{contacts[activeContact].messages[index].message}}</div> -->
+                        </div>
+                        <!-- <div class="message_received d-flex flex-column">
+                            <div class="received rounded-3 px-2 py-3 align-self-start mt-4 ms-3"> -->
+                        <!-- {{contacts[activeContact].messages[index].message}}</div>
+                        </div> -->
+                    </div>
+                    <div class="chat_input d-flex justify-content-between align-items-center">
+                        <a class="text-muted" href="#"><i class="fa-regular fa-face-smile px-4"></i></a>
+                        <input class="input_message my-2 border-0" type="text" placeholder="Scrivi un messaggio">
+                        <a class="text-muted" href="#"><i class="fa-solid fa-microphone px-4"></i></a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
