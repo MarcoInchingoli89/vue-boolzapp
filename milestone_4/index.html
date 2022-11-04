@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <div class="sidebar_contacts">
-                        <div @change="contactsFilterList" v-for="(contact, i) in contacts" class="contact d-flex align-items-center"
+                        <div v-for="(contact, i) in contactsFilterList" class="contact d-flex align-items-center"
                             :class="i === activeContact ? 'active' : '' " @click="changeContact(i)">
                             <div class="avatar_face">
                                 <img class="rounded-circle px-1 py-1" width="50" :src="contact.avatar" alt="">

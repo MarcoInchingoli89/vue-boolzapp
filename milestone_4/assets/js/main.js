@@ -200,19 +200,17 @@ createApp({
         this.contacts[activeContact].messages.push(this.messageAnswer);
       }, 1000);
       this.newMessage.message = '';
-    },
-    contactsFilterList() {
-      if (this.searchValue.trim().lenght > 0) {
-        return [];
-      }
-      return this.contacts;
     }
 
   },
 
   computed: {
-
-
+    contactsFilterList() {
+      if (this.searchValue === '') return this.contacts
+      return this.contacts.filter(contact => {
+        return contact.name.toLowerCase().includes(this.searchValue.toLowerCase())
+      })
+    }
 
   }
 }).mount('#app')
