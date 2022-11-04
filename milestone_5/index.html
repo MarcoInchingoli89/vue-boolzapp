@@ -23,23 +23,31 @@
 
                 <div class="sidebar d-flex flex-column">
                     <div class="sidebar_header border-end d-flex justify-content-between">
+
+                        <!-- avatar utente -->
                         <div class="avatar d-flex align-items-center">
+                            
                             <div class="avatar_face">
                                 <img class="rounded-circle p-1" width="50" src="./assets/img/avatar_io.jpg" alt="">
                             </div>
+
                             <div class="avatar_name font_name">Sofia</div>
                         </div>
+
                         <div class="sidebar_icons d-flex align-items-center gap-2 px-3">
                             <a href="#"><i class="fa-solid fa-circle-notch text-muted"></i></a>
                             <a href="#"><i class="fa-solid fa-message text-muted"></i></a>
                             <a href="#"><i class="fa-solid fa-ellipsis-vertical text-muted"></i></i></a>
                         </div>
                     </div>
+                    <!-- lato notifiche -->
                     <div class="sidebar_notifications d-flex gap-3 p-2">
+
                         <div
                             class="bell_icon rounded-circle bg-white d-flex justify-content-center align-items-center p-2">
                             <i class="fa-solid fa-bell-slash text-info"></i>
                         </div>
+
                         <div class="notifications_stats d-flex flex-column justify-content-center">
                             <div class="notifications_receive font_min">Ricevi notifiche di nuovi messaggi</div>
                             <div class="activate_notifications font_min">
@@ -47,19 +55,24 @@
                             </div>
                         </div>
                     </div>
+                    <!-- barra di ricerca -->
                     <div class="sidebar_search">
                         <div class="search my-2 mx-2">
                             <i class="fa-solid fa-magnifying-glass text-muted px-2"></i>
+                            <!-- input per filtrare i contatti -->
                             <input v-model="searchValue" class="search_input font_min px-2 border-0" type="text" placeholder="Cerca o inizia una nuova chat">
                             <!-- <span class="text-secondary font_min px-2">Cerca o inizia una nuova chat</span> -->
                         </div>
                     </div>
                     <div class="sidebar_contacts">
+                        <!-- lista contatti in modo dinamico -->
                         <div v-for="(contact, i) in contactsFilterList" class="contact d-flex align-items-center"
                             :class="i === activeContact ? 'active' : '' " @click="changeContact(i)">
+
                             <div class="avatar_face">
                                 <img class="rounded-circle px-1 py-1" width="50" :src="contact.avatar" alt="">
                             </div>
+
                             <div class="avatar_access">
                                 <div class="avatar_name font_name">{{contact.name}}</div>
                                 <div class="last_access text-secondary font_min">Ultimo messaggio inviato</div>
@@ -73,34 +86,38 @@
 
                 <div class="chat d-flex flex-column">
                     <div class="chat_header d-flex justify-content-between">
+                        <!-- contatto attivo chat -->
                         <div class="active_user d-flex align-items-center">
+
                             <div class="avatar_face">
                                 <img class="rounded-circle px-1 py-1" width="50" :src="contacts[activeContact].avatar" alt="">
                             </div>
+
                             <div class="avatar_access">
                                 <div class="avatar_name font_name">{{contacts[activeContact].name}}</div>
                                 <div class="last_access text-secondary font_min">Ultimo accesso oggi alle 12:00</div>
                             </div>
                         </div>
+
                         <div class="sidebar_icons d-flex align-items-center gap-2 px-3">
                             <a href="#"><i class="fa-solid fa-magnifying-glass text-muted"></i></a>
                             <a href="#"><i class="fa-solid fa-paperclip text-muted"></i></a>
                             <a href="#"><i class="fa-solid fa-ellipsis-vertical text-muted"></i></i></a>
                         </div>
+
                     </div>
+
+                    <!-- messaggi chat -->
                     <div class="chat_main">
                         <div v-for="(message, index) in contacts[activeContact].messages"
                             class="message_sent d-flex flex-column">
                             <div :class="contacts[activeContact].messages[index].status === 'received' ? 'received' : 'sent' "
                                 class="rounded-3 px-2 py-3 mt-4 my-2 me-3">
                                 {{contacts[activeContact].messages[index].message}}</div>
-                            <!-- <div class="sent rounded-3 px-2 py-3 align-self-end me-3">{{contacts[activeContact].messages[index].message}}</div> -->
                         </div>
-                        <!-- <div class="message_received d-flex flex-column">
-                            <div class="received rounded-3 px-2 py-3 align-self-start mt-4 ms-3"> -->
-                        <!-- {{contacts[activeContact].messages[index].message}}</div>
-                        </div> -->
                     </div>
+
+                    <!-- input per i messaggi in chat -->
                     <div class="chat_input d-flex justify-content-between align-items-center">
                         <a class="text-muted" href="#"><i class="fa-regular fa-face-smile px-4"></i></a>
                         <input v-model="newMessage.message" @keyup.enter="addMessage(activeContact)" class="input_message my-2 border-0" type="text" placeholder="Scrivi un messaggio">

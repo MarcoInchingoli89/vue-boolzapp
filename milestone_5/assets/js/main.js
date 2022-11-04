@@ -185,6 +185,7 @@ createApp({
 
   methods: {
     changeContact(i) {
+      //il contatto attivo cambia in base all'indice
       this.activeContact = i;
     },
 
@@ -195,10 +196,13 @@ createApp({
       };
       console.log(newMessage);
       console.log(this.contacts[activeContact].messages);
+      //aggiungi un nuovo messaggio
       this.contacts[activeContact].messages.push(newMessage);
+      //imposta un timer di un secondo e aggiunge un messaggio di risposta
       this.timeAnswer = setTimeout(() => {
         this.contacts[activeContact].messages.push(this.messageAnswer);
       }, 1000);
+      //svuota l'input
       this.newMessage.message = '';
     }
 
@@ -206,6 +210,7 @@ createApp({
 
   computed: {
     contactsFilterList() {
+      //filtra i nomi dei contatti con lo stesso input inserito e li mostra a schermo
       if (this.searchValue === '') return this.contacts
       return this.contacts.filter(contact => {
         return contact.name.toLowerCase().includes(this.searchValue.toLowerCase())
