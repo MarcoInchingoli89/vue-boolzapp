@@ -5,6 +5,7 @@ createApp({
   data() {
     return {
 
+      showMenu: false,
       newMessage: {
         date: '',
         message: '',
@@ -204,6 +205,12 @@ createApp({
       }, 1000);
       //svuota l'input
       this.newMessage.message = '';
+    },
+
+    toggleMenu() {
+
+      console.log('Ho cliccato sul messaggio');
+      this.showMenu = !this.showMenu;
     }
 
   },
