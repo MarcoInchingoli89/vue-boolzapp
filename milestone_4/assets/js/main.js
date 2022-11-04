@@ -4,7 +4,7 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
-      
+
       newMessage: {
         date: '',
         message: '',
@@ -15,6 +15,7 @@ createApp({
         message: 'Ok!',
         status: 'received'
       },
+      searchValue: '',
       activeContact: 0,
       contacts: [
         {
@@ -191,17 +192,27 @@ createApp({
       console.log('Ho inserito il messaggio');
       const newMessage = {
         ...this.newMessage
-    };
-    console.log(newMessage);
-    console.log(this.contacts[activeContact].messages);
-    this.contacts[activeContact].messages.push(newMessage);
-    this.timeAnswer = setTimeout(() => {
-      this.contacts[activeContact].messages.push(this.messageAnswer);
-    }, 1000);
-    this.newMessage.message = '';
-},
-  filterList() {
-    
-  }
+      };
+      console.log(newMessage);
+      console.log(this.contacts[activeContact].messages);
+      this.contacts[activeContact].messages.push(newMessage);
+      this.timeAnswer = setTimeout(() => {
+        this.contacts[activeContact].messages.push(this.messageAnswer);
+      }, 1000);
+      this.newMessage.message = '';
+    },
+    contactsFilterList() {
+      if (this.searchValue.trim().lenght > 0) {
+        return [];
+      }
+      return this.contacts;
+    }
+
+  },
+
+  computed: {
+
+
+
   }
 }).mount('#app')

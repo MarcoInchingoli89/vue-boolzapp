@@ -50,12 +50,12 @@
                     <div class="sidebar_search">
                         <div class="search my-2 mx-2">
                             <i class="fa-solid fa-magnifying-glass text-muted px-2"></i>
-                            <input class="search_input font_min px-2 border-0" type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input v-model="searchValue" class="search_input font_min px-2 border-0" type="text" placeholder="Cerca o inizia una nuova chat">
                             <!-- <span class="text-secondary font_min px-2">Cerca o inizia una nuova chat</span> -->
                         </div>
                     </div>
                     <div class="sidebar_contacts">
-                        <div v-for="(contact, i) in contacts" class="contact d-flex align-items-center"
+                        <div @change="contactsFilterList" v-for="(contact, i) in contacts" class="contact d-flex align-items-center"
                             :class="i === activeContact ? 'active' : '' " @click="changeContact(i)">
                             <div class="avatar_face">
                                 <img class="rounded-circle px-1 py-1" width="50" :src="contact.avatar" alt="">
